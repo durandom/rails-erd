@@ -21,7 +21,8 @@ module RailsERD
         private
 
         def association_identity(association)
-          Set[association_owner(association), association_target(association)]
+          identifier = association_identifier(association).to_s
+          Set[identifier, association_owner(association), association_target(association)]
         end
 
         def association_identifier(association)
